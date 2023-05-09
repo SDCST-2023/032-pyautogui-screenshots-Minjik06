@@ -13,28 +13,43 @@ def cookieClick():
     print(r,g,b)
     p.moveTo(location)
     while True: 
-        for i in range(20):
+        k=80
+        for i in range(k):
             p.click()
         #print(p.pixel(1220,391), p.pixel(1218,333) , p.pixel(1218,277))
-            if p.pixelMatchesColor(1220,391,(255,255,255)):
-                Farm()
-                p.moveTo(location)
-            if p.pixelMatchesColor(1218,333,(255,255,255)):
-                Grandmother()
-                p.moveTo(location)
-            if p.pixelMatchesColor(1218,277,(255,255,255)):
-                autocursor()
-                p.moveTo(location)
-        for k in range(40):
-            if p.pixelMatchesColor(1194,168,(6,19,27)):
-                Store()
-                p.moveTo(location)
+        if p.pixelMatchesColor(1194,168,(6,19,27)):
+            Store()
+            k+=2
+            p.moveTo(location)
+        if p.pixelMatchesColor(1243, 566,(255,255,255)):
+            Bank()
+            k+=2
+            p.moveTo(location)
+        if p.pixelMatchesColor(1295, 505,(255,255,255)):
+            Factory()
+            k+=2
+            p.moveTo(location)
+        if p.pixelMatchesColor(1227,452,(255,255,255)):
+            Mine()
+            k+=2
+            p.moveTo(location)
+        if p.pixelMatchesColor(1220,391,(255,255,255)):
+            Farm()
+            k+=2
+            p.moveTo(location)
+        if p.pixelMatchesColor(1218,333,(255,255,255)):
+            Grandmother()
+            k+=2
+            p.moveTo(location)
+        if p.pixelMatchesColor(1218,277,(255,255,255)):
+            autocursor()
+            k+=2
+            p.moveTo(location)
     
 def autocursor():
     if debug: print("autocursor")
     location1 = p.locateOnScreen('assets/cur.png',confidence=0.9)
-    while p.pixelMatchesColor(1218,277,(255,255,255)):
-        p.click(location1)
+    p.click(location1)
     
 
 def Grandmother():
@@ -45,20 +60,37 @@ def Grandmother():
     time.sleep(0.25)
     p.moveTo(mp)
     """
-    while p.pixelMatchesColor(1218,333,(255,255,255)):
-        p.click(location2)
+    p.click(location2)
     
 
 def Farm():
     if debug: print("farm")
     location3 = p.locateOnScreen('assets/far.png',confidence=0.9)
-    while p.pixelMatchesColor(1220,391,(255,255,255)):
-        p.click(location3)
+    p.click(location3)
+
+def Mine():
+    if debug: print("Mine")
+    location5 = p.locateOnScreen('assets/ma.png',confidence=0.9)
+    p.click(location5)
+
+def Factory():
+    if debug: print("Factory")
+    location6 = p.locateOnScreen('assets/fac.png',confidence=0.9)
+    p.click(location6)
+
 
 def Store():
     if debug: print("Store")
     location4 = p.locateOnScreen('assets/str.png',confidence=0.9)
     p.click(location4)
+
+def Bank():
+    if debug: print("Bank")
+    location4 = p.locateOnScreen('assets/bank.png',confidence=0.9)
+    p.click(location4)
+
+
+
 
 
 def main():
@@ -69,6 +101,7 @@ def main():
 main()
 
 """def cookieClick():
+
     k=[autocursor(), Grandmother(), Farm()]
     location = p.locateOnScreen('assets/cok.png')
     p.moveTo(location)
@@ -136,3 +169,35 @@ main()
                 p.confirm("want to by cursor?")
                 autocursor()
             p.click()"""
+
+"""def autocursor():
+    if debug: print("autocursor")
+    location1 = p.locateOnScreen('assets/cur.png',confidence=0.9)
+    while p.pixelMatchesColor(1218,277,(255,255,255)):
+        p.click(location1)
+    
+
+def Grandmother():
+    if debug: print("grandmother")
+    location2 = p.locateOnScreen('assets/gra.png',confidence = 0.9)
+    while p.pixelMatchesColor(1218,333,(255,255,255)):
+        p.click(location2)
+    
+
+def Farm():
+    if debug: print("farm")
+    location3 = p.locateOnScreen('assets/far.png',confidence=0.9)
+    while p.pixelMatchesColor(1220,391,(255,255,255)):
+        p.click(location3)
+
+def Mine():
+    if debug: print("Mine")
+    location5 = p.locateOnScreen('assets/ma.png',confidence=0.9)
+    while p.pixelMatchesColor(1227,452,(255,255,255)):
+        p.click(location5)
+
+
+def Store():
+    if debug: print("Store")
+    location4 = p.locateOnScreen('assets/str.png',confidence=0.9)
+    p.click(location4)"""
