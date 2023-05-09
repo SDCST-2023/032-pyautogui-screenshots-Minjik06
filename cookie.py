@@ -9,15 +9,15 @@ p.Pause = 0.001
 
 def cookieClick():
     location = p.locateOnScreen('assets/cok.png')
-    r,g,b=p.pixel(1194,168)
+    r,g,b=p.pixel(1162,201)
     print(r,g,b)
     p.moveTo(location)
     while True: 
-        k=80
+        k=20
         for i in range(k):
             p.click()
         #print(p.pixel(1220,391), p.pixel(1218,333) , p.pixel(1218,277))
-        if p.pixelMatchesColor(1194,168,(6,19,27)):
+        if p.pixelMatchesColor(1194,168,(6,19,27)) or p.pixelMatchesColor(1194,196,(12,26,36)) or p.pixelMatchesColor(1162,201,(10,27,38)):
             Store()
             k+=2
             p.moveTo(location)
@@ -81,15 +81,12 @@ def Factory():
 
 def Store():
     if debug: print("Store")
-    location4 = p.locateOnScreen('assets/str.png',confidence=0.9)
-    p.click(location4)
+    p.click(1180, 181)
 
 def Bank():
     if debug: print("Bank")
     location4 = p.locateOnScreen('assets/bank.png',confidence=0.9)
     p.click(location4)
-
-
 
 
 
@@ -99,6 +96,17 @@ def main():
 
 
 main()
+
+
+"""def Store():
+    if debug: print("Store")
+    location4 = p.locateOnScreen('assets/str.png',confidence=3)
+    p.click(location4)
+    
+    if p.pixelMatchesColor(1194,168,(6,19,27)) or p.pixelMatchesColor(1194,196,(12,26,36)):
+            Store()
+            k+=2
+            p.moveTo(location)"""
 
 """def cookieClick():
 
