@@ -7,7 +7,7 @@ p.Pause = 0.001
 
 def cookieClick():
     location = p.locateOnScreen('assets/cok.png')
-    r,g,b=p.pixel(1162,201)
+    r,g,b=p.pixel(1164,201)
     print(r,g,b)
     p.moveTo(location)
     while True: 
@@ -15,7 +15,7 @@ def cookieClick():
         for i in range(k):
             p.click()
         #print(p.pixel(1220,391), p.pixel(1218,333) , p.pixel(1218,277))
-        if p.pixelMatchesColor(1194,168,(6,19,27)) or p.pixelMatchesColor(1194,196,(12,26,36)) or p.pixelMatchesColor(1162,201,(10,27,38)):
+        if p.pixelMatchesColor(1194,168,(6,19,27)) or p.pixelMatchesColor(1194,196,(12,26,36)) or p.pixelMatchesColor(1162,201,(10,27,38)) or p.pixelMatchesColor(1164,201,(11, 31,44)):
             Store()
             k+=2
             p.moveTo(location)
@@ -48,7 +48,6 @@ def autocursor():
     if debug: print("autocursor")
     location1 = p.locateOnScreen('assets/cur.png',confidence=0.9)
     p.click(location1)
-    
 
 def Grandmother():
     if debug: print("grandmother")
@@ -59,7 +58,6 @@ def Grandmother():
     p.moveTo(mp)
     """
     p.click(location2)
-    
 
 def Farm():
     if debug: print("farm")
@@ -75,7 +73,6 @@ def Factory():
     if debug: print("Factory")
     location6 = p.locateOnScreen('assets/fac.png',confidence=0.9)
     p.click(location6)
-
 
 def Store():
     if debug: print("Store")
