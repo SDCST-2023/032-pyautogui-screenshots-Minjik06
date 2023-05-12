@@ -1,6 +1,4 @@
 from ctypes.wintypes import RGB
-import random
-import time
 import pyautogui as p
 from pyscreeze import pixel, pixelMatchesColor
 debug = False
